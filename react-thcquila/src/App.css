@@ -24,3 +24,54 @@ body {
 .text-bright {
     color: var(--lightBlue);
 }
+
+.btn {
+    text-transform: capitalize;
+    font-size: 1.4rem;
+    background-color: transparent;
+    border: 0.05rem solid var(--lightBlue);
+    color: var(--lightBlue);
+    border-radius: 0.5rem;
+    padding: 0.2rem 0.5rem;
+    cursor: pointer;
+    margin: 0.2rem 0.5rem 0.2rem 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.btn:hover {
+    background: var(--lightBlue);
+    color: var(--mainBlue);
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.cartBtn {
+    border: 0.05rem solid var(--mainYellow);
+    color: var(--mainYellow);
+}
+
+.cartBtn:hover  {
+    background-color: var(--mainYellow);
+}
+
+.btn-black {
+    background: transparent;
+    text-transform: capitalize;
+    font-size: 0.8rem !important;
+    color: var(--mainDark);
+    border-radius: 0 !important;
+    border: 0.1rem solid var(--mainDark) !important;
+}
+
+.btn-black:hover {
+    background: var(--mainDark) !important;
+    color: var(--mainWhite) !important;
+}
+
+.cart-icon {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--mainYellow);
+}

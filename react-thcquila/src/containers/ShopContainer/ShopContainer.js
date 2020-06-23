@@ -15,7 +15,7 @@ class ShopContainer extends Component {
                     <Route path="/shop" exact component={ProductList} />
                     <Route path="/shop/details" component={Details} />
                     <Route path="/shop/cart" component={Cart} />
-                    <Route  component={Default} />
+                    <Route component={Default} />
                 </Switch>
             </>
         )

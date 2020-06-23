@@ -3,7 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 // components
 import Navigation from './components/Navigation/Navigation';
-
+import Modal from './components/Modal/Modal';
+import Footer from './components/Footer/Footer';
 
 
 class App extends Component {
@@ -11,6 +12,8 @@ class App extends Component {
     return(
       <>
         <Navigation/>
+        <Modal/>
+        <Footer/>
       </>
     )
   }

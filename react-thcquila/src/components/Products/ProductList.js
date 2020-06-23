@@ -11,15 +11,14 @@ class ProductList extends Component {
                     <div className="container">
                         <Title name="our" title="products"/>
                         <div className="row">
-                        <ProductConsumer>
-                            {val =>{
-                                return val.products.map( product => {
-                                    return <Product key={product.id} product={product} />
-                                })
-                            }}
-                        </ProductConsumer>
+                            <ProductConsumer>
+                                { val => {
+                                    return val.products.map( xproduct => {
+                                        return <Product key={xproduct.id} product={xproduct} />
+                                    })
+                                }}
+                            </ProductConsumer>
                         </div>
-                        
                     </div>
                 </div>
             </>
