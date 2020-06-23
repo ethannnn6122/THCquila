@@ -10,6 +10,7 @@ body {
     font-family: 'Ubuntu', sans-serif !important;
     background: var(--mainWhite) !important;
     color:  var(--mainDark) !important;
+    overflow-x: hidden;
 }
 
 .text-title {

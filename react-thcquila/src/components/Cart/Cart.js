@@ -12,14 +12,14 @@ class Cart extends Component {
             <>
                 <ProductConsumer>
                     { val => {
-                        const {cart, inc} = val;
+                        const {cart} = val;
                         if (cart.length > 0 ) {
                             return (
                                 <>
                                     <Title name="your" title="cart" />
                                     <CartColumns/>
-                                    <CartList value={val} inc={inc}/>
-                                    <CartTotals value={val} />
+                                    <CartList value={val}/>
+                                    <CartTotals value={val} history={this.props.history}/>
                                 </>
                             )
                         } else {

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
+import PaypalButton from '../PaypalButton';
+
 const CartTotals = (props) => {
     const {cartSubTotal, cartTax, cartTotal, clearCart} = props.value;
     return (
@@ -23,6 +25,10 @@ const CartTotals = (props) => {
                              <span className="text-title">Total: </span>
                             <strong>$ {cartTotal}</strong>
                         </h5>
+                        <div className="mx-auto">
+                            <PaypalButton total={cartTotal} />
+                        </div>
+                        
                     </Col>
                 </Row>
             </Container>
