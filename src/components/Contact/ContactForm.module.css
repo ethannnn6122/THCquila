@@ -1,0 +1,95 @@
+.ContactForm {
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.ContactForm p {
+  color: var(--mainDark);
+}
+
+.FormRow {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Ensure this matches the JS usage */
+.FormGroup {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.FormGroup label {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--mainDark);
+}
+
+.FormGroup input,
+.FormGroup textarea {
+  background-color: var(--mainWhite);
+  border: 1px solid var(--mainDark);
+  border-radius: 4px;
+  padding: 0.75rem;
+  color: var(--mainBlue);
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%; /* Added to ensure full width */
+}
+
+.FormGroup input:focus,
+.FormGroup textarea:focus {
+  outline: none;
+  border-color: var(--mainYellow);
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.FormGroup textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.SubmitBtn {
+  background-color: var(--mainYellow);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%; /* Optional: makes button full width */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.SubmitBtn:hover:not(:disabled) {
+  background-color: var(--mainYellow);
+  transform: translateY(-2px);
+}
+
+.SubmitBtn:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Renamed for easier JS access */
+.SuccessMsg {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: 4px;
+  text-align: center;
+  background-color: rgba(76, 175, 80, 0.2);
+  color: #2e7d32; /* Darker green for readability */
+}
+
+.ErrorMsg {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: 4px;
+  text-align: center;
+  background-color: rgba(229, 57, 53, 0.2);
+  color: #c62828; /* Darker red for readability */
+}

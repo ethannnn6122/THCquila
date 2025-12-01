@@ -1,0 +1,15 @@
+.heroSection {
+    background: 'linear-gradient(135deg, var(--mainBlue) 0%, #1e293b 100%)';
+    color: 'white';
+    padding: '5rem 1rem';
+    margin-bottom: '3rem';
+    text-align: 'center';
+    border-radius: '0 0 50% 50% / 4%';
+}
+
+.shopBtn {
+    background: var(--mainYellow);
+    color: var(--mainBlue);
+    border: none;
+    font-weight: bold;
+}

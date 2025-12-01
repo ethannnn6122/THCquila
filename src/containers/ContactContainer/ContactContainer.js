@@ -1,12 +1,11 @@
-import React, {Component} from 'react';
+import {Component} from 'react';
+import { ContactForm } from '../../components/Contact/ContactForm';
 
 class ContactContainer extends Component {
-    render() {
-        return(
-            <>
-                <h1>CONTACT PAGE</h1>
-            </>
-        )
+    render() {        
+       return (
+            <ContactForm />
+        );
     } 
 }
 

@@ -1,4 +1,4 @@
-import React,{Component} from 'react';
+import {Component} from 'react';
 import classes from './Product.module.css';
 import {Link} from "react-router-dom";
 import {ProductConsumer} from '../../context';
@@ -10,7 +10,6 @@ class Product extends Component {
     render() {
         const {id, title, img, price, inCart} = this.props.product;
         return (
-
             <Col className="col-9 mx-auto col-md-6 col-lg-3 my-3">
                 <Card className={classes.Card}>
                     <ProductConsumer>

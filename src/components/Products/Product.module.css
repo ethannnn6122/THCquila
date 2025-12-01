@@ -1,52 +1,61 @@
 .Card {
-    border-color: transparent;
-    transition: all 1s linear;
-}
-
-.CardFooter{
-    background: transparent;
-    border-top: transparent;
-    display: flex;
-    justify-content: space-between;
-    transition: all 1s linear; 
+    border: none;
+    background: #fff;
+    border-radius: 1rem; /* More rounded corners */
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); /* Very subtle default shadow */
+    transition: all 0.3s ease-in-out;
 }
 
 .Card:hover {
-    border: 0.04rem solid rgba(0, 0, 0, 0.2);
-    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px); /* Lift up */
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
 }
 
-.CardFooter:hover {
-    background: rgb(247, 247, 247);
-}
-
-.CardImgTop {
-    width: 100%;
-    transition: all 0.5s linear;
+.CardFooter {
+    background: transparent;
+    border-top: 1px solid #f1f5f9;
+    padding: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .imgContainer {
-    padding: 1.5rem;
     position: relative;
     overflow: hidden;
+    background: #f8fafc; /* Subtle gray background for images */
+    min-height: 250px;    /* Force uniform height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.imgContainer:hover .CardImgTop{   
-    transform: scale(1.2); 
+.CardImgTop {
+    transition: all 0.5s ease-in-out;
+    max-height: 200px;
+    width: auto;
 }
 
+.imgContainer:hover .CardImgTop {
+    transform: scale(1.1);
+}
+
+/* Modern styling for the cart button on the image */
 .CartBtn {
     position: absolute;
-    bottom: 3rem;
+    bottom: 0;
     right: 0;
-    background: var(--lightBlue);
+    padding: 0.5rem 0.8rem;
+    background: var(--mainYellow);
     border: none;
-    color: var(--mainWhite);
-    font-size: 1.4rem;
+    color: var(--mainBlue);
+    font-size: 1.2rem;
     border-radius: 0.5rem 0 0 0;
+    transform: translate(100%, 100%); /* Hidden by default */
+    transition: all 0.3s linear;
 }
 
-.CartBtn:hover {
-    color: var(--mainBlue);
-    cursor: pointer;
+.imgContainer:hover .CartBtn {
+    transform: translate(0, 0); /* Slide in on hover */
 }

@@ -1,26 +1,39 @@
-.StyledButton {
-    text-transform: capitalize;
-    font-size: 1.4rem;
-    background: transparent;
-    border: 0.2rem solid var(--lightBlue);
-    color: var(--lightBlue);
-    border-radius: 0.5rem;
-    padding: 0.2rem 0.5rem;
-    cursor: pointer;
-    margin: 0.2rem 0.5rem 0.2rem 0rem;
-    transition: all 0.5s ease-in-out;
-}
-
-.StyledButton:hover {
-    background-color: var(--lightBlue);
-}
-
 .NavWrapper {
     background: var(--mainBlue);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    padding: 0.75rem 1.5rem;
+}
+
+.Logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    color: var(--mainYellow) !important;
 }
 
 .NavLink {
-    color: var(--mainWhite) !important;
-    font-size: 1.3rem;
-    text-transform: capitalize;
+    color: #e2e8f0 !important; /* Softer white */
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0 0.5rem;
+    transition: color 0.2s;
+}
+
+.NavLink:hover {
+    color: var(--mainYellow) !important;
+}
+
+.CartButton {
+    border: 2px solid var(--mainYellow);
+    color: var(--mainYellow);
+    font-weight: 600;
+}
+
+.CartButton:hover {
+    background: var(--mainYellow);
+    color: var(--mainBlue);
+}
+
+.Hr {
+    background-color: var(--mainYellow);
 }
