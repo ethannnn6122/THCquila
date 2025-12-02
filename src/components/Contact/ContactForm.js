@@ -43,19 +43,15 @@ export function ContactForm() {
       </p>
       
       <div className={classes.FormRow}>
-        {/* Fixed: Changed FormRow to FormGroup here */}
         <div className={classes.FormGroup}>
           <label htmlFor="name">Name</label>
           <input type="text" id="name" name="name" value={formData.name} onChange={handleInputChange} required />
         </div>
-        {/* Fixed: Changed FormRow to FormGroup here */}
         <div className={classes.FormGroup}>
           <label htmlFor="email">Email</label>
           <input type="email" id="email" name="email" value={formData.email} onChange={handleInputChange} required />
         </div>
       </div>
-
-      {/* Added FormGroup wrapper for consistency */}
       <div className={classes.FormGroup}>
         <label htmlFor="subject">Subject</label>
         <input type="text" id="subject" name="subject" value={formData.subject} onChange={handleInputChange} />

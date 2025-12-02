@@ -1,9 +1,22 @@
-.Footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: red;
-    color: white;
-    text-align: center;
+.FooterWrapper {
+    background-color: var(--mainBlue);
+    color: var(--mainWhite);
+    padding: 3rem 0 1.5rem;
+    margin-top: auto; /* Pushes footer to bottom naturally */
+    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Very subtle separator */
+}
+
+.Brand {
+    color: var(--mainYellow);
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    margin-bottom: .5rem;
+    text-transform: uppercase;
+}
+
+.Copyright {
+    font-size: 0.85rem;
+    opacity: 0.5;
+    margin-top: 1rem;
+    padding-top: 1.5rem;
 }

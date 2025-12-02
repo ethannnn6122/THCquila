@@ -1,10 +1,10 @@
 :root {
   /* Modern Palette */
-  --mainBlue: #0f172a;       /* Deep Midnight / Slate 900 */
-  --lightBlue: #38bdf8;      /* Sky Blue / Cyan 400 */
-  --mainWhite: #f8fafc;      /* Slate 50 */
-  --mainDark: #1e293b;       /* Slate 800 */
-  --mainYellow: #fbbf24;     /* Amber 400 */
+  --mainBlue: #2A3B2E;
+  --lightBlue: #6E7F60;
+  --mainWhite: #F2EFE4;
+  --mainDark: #2C2C2C;   
+  --mainYellow: #EAA221; 
   --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 

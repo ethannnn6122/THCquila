@@ -28,16 +28,15 @@ class HomeContainer extends Component {
                 <Container className="mb-5 mt-4">
                     <Row className="align-items-center">
                         <Col md={6} className="mb-4 mb-md-0">
-                            <h2 className="mb-3 text-blue">Our Story</h2>
+                            <h2>Our Story</h2>
                             <p className="text-muted" style={{ lineHeight: '1.8' }}>
-                                Ipsum in sunt tempor magna magna est ea do eu fugiat ex. Non exercitation proident deserunt irure laborum deserunt et dolor est nisi.
-                                Duis aliqua excepteur adipisicing ullamco velit. Est in ex aliqua dolor qui amet voluptate exercitation commodo et non amet voluptate consectetur.
+                                What is THCquila? It started with a simple idea: High spirits and good vibes belong together. We noticed that the tequila lovers and the cannabis connoisseurs were often the same people at the party—so we built a brand just for them. THCquila isn't a drink; it's a statement. It’s apparel infused with the prickly edge of the desert and the chill of the West Coast. Bold graphics, vintage textures, and a unapologetic love for the cross-fade.
                             </p>
                         </Col>
                         <Col md={6} className="mb-4 mb-md-0">
                             <img 
-                                src="https://picsum.photos/id/111/800/600" 
-                                alt="Lifestyle" 
+                                src="/THCquilaLogo.png" 
+                                alt="THCquila Story" 
                                 className="img-fluid rounded shadow-lg"
                                 style={{ objectFit: 'cover' }} 
                             />

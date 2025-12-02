@@ -1,3 +1,9 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Forces the app to be at least as tall as the screen */
+}
+
 body {
   margin: 0;
   font-family: 'Ubuntu', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
