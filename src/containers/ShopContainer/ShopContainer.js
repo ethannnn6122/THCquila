@@ -2,9 +2,10 @@ import {Component} from 'react';
 import {Switch, Route} from 'react-router-dom';
 
 // components
-import ProductList from '../../components/Products/ProductList';
+// import ProductList from '../../components/Products/ProductList';
+import Placeholder from '../../components/Products/Placeholder';
 import Details from '../../components/Products/Details';
-import Cart  from '../../components/Cart/Cart';
+// import Cart  from '../../components/Cart/Cart';
 import Default from '../../components/Default';
 
 class ShopContainer extends Component {
@@ -12,9 +13,10 @@ class ShopContainer extends Component {
         return(
             <>
                 <Switch>
-                    <Route path="/shop" exact component={ProductList} />
+                    {/* <Route path="/shop" exact component={ProductList} /> */}
+                    <Route path="/shop" exact component={Placeholder} />
                     <Route path="/shop/details" component={Details} />
-                    <Route path="/shop/cart" component={Cart} />
+                    {/* <Route path="/shop/cart" component={Cart} /> */}
                     <Route component={Default} />
                 </Switch>
             </>

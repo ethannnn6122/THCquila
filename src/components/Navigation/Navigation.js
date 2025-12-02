@@ -17,7 +17,7 @@ const Navigation = () => {
     // Modernized "Cart" button with icon
     const cartButton = (
         <LinkContainer to='/shop/cart'>
-            <Button className={classes.CartButton}>
+            <Button className={classes.CartButton} disabled>
                 <i className="fas fa-shopping-cart mr-2"></i> 
                 My Cart
             </Button>

@@ -39,6 +39,23 @@
   width: 100%; /* Added to ensure full width */
 }
 
+/* Styles to keep checkbox inline with its label text across breakpoints */
+.CheckboxInput {
+  width: auto !important;
+  padding: 0 !important;
+  height: auto;
+  display: inline-block;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+.CheckboxLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
 .FormGroup input:focus,
 .FormGroup textarea:focus {
   outline: none;

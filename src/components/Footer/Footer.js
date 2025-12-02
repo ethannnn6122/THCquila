@@ -9,9 +9,9 @@ const Footer = () => {
                         {/* Brand / Logo Area */}
                         <h4 className={classes.Brand}>THCquila</h4>
                         {/* Copyright Area */}
-                        <div className={classes.Copyright}>
+                        <div className={classes.Text}>
                             <p className="mb-0">
-                                &copy; {new Date().getFullYear()} Milehighcoding. All rights reserved.
+                                Infused Apparel for the bold and the buzzed {new Date().getFullYear()} &copy; Milehighcoding. All rights reserved.
                             </p>
                         </div>
                     </div>
