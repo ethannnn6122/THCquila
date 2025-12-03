@@ -41,12 +41,6 @@ export function ContactForm() {
         </div>
       </div>
       <div className={classes.FormGroup}>
-        <label htmlFor="subscribe" className={classes.CheckboxLabel}>
-          <input className={classes.CheckboxInput} type="checkbox" id="subscribe" name="subscribe" checked={formData.subscribe} onChange={(e) => setFormData(prev => ({...prev, subscribe: e.target.checked}))} />
-          {' '}Yes, please notify me.
-        </label>
-      </div>
-      <div className={classes.FormGroup}>
         <label htmlFor="subject">Subject</label>
         <input type="text" id="subject" name="subject" value={formData.subject} onChange={handleInputChange} />
       </div>

@@ -1,15 +1,18 @@
 :root {
-  /* Modern Palette */
+  /* Palette */
   --mainBlue: #2A3B2E;
   --lightBlue: #6E7F60;
   --mainWhite: #F2EFE4;
   --mainDark: #2C2C2C;   
   --mainYellow: #EAA221; 
   --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  /* Font Variables */
+  --fontHeading: 'Rye', serif;
+  --fontBody: 'Inter', sans-serif;
 }
 
 body {
-  font-family: 'Inter', 'Ubuntu', sans-serif !important; /* Suggest adding 'Inter' from Google Fonts */
+  font-family: var(--fontBody);
   background: var(--mainWhite) !important;
   color: var(--mainDark) !important;
   overflow-x: hidden;
@@ -17,12 +20,14 @@ body {
 
 /* Typography Improvements */
 h1, h2, h3 {
+  font-family: var(--fontHeading);
   font-weight: 700;
   letter-spacing: -0.025em; /* Tighter, modern heading tracking */
 }
 
 /* Button Modernization */
 .btn {
+  font-family: var(--fontBody);
   text-transform: capitalize;
   font-size: 1.1rem; /* Slightly smaller, more refined */
   font-weight: 600;
