@@ -1,5 +1,5 @@
 .ContactForm {
-  padding: 4rem 20rem;
+  padding: 4rem 10rem;
   margin-bottom: 1.5rem;
 }
 
@@ -109,4 +109,23 @@
   text-align: center;
   background-color: rgba(229, 57, 53, 0.2);
   color: #c62828; /* Darker red for readability */
+}
+
+@media screen and (max-width: 768px) {
+  .ContactForm {
+    padding: 2rem 1.5rem;
+  }
+
+  .FormRow {
+    flex-direction: column;
+  }
+
+  .FormGroup {
+    width: 100%;
+  }
+
+  .SubmitBtn {
+    width: auto; /* Optional: makes button fit content */
+  }
+  
 }

@@ -35,7 +35,7 @@ class HomeContainer extends Component {
                         </Col>
                         <Col md={6} className="mb-4 mb-md-0">
                             <img 
-                                src="/THCquilaLogo.png" 
+                                src={`${import.meta.env.BASE_URL}THCquilaLogo.png`}
                                 alt="THCquila Story" 
                                 className="img-fluid rounded shadow-lg"
                                 style={{ objectFit: 'cover' }} 

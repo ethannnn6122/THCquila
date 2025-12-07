@@ -7,7 +7,7 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
     <ProductProvider>
-      <Router>
+      <Router basename="/THCquila/">
         <App />
       </Router>
     </ProductProvider>,

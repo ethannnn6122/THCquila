@@ -1,68 +1,73 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository is the frontend for THCquila — an ecommerce site for the THCquila brand. The project uses Vite as the build tool and development server.
 
-## Available Scripts
+**Quick Overview**
+- **Framework:** React (legacy 16.x codebase)
+- **Bundler / Dev server:** Vite
+- **Build output:** `build` (configured in `vite.config.js`)
 
-In the project directory, you can run:
+**Prerequisites**
+- Node.js (recommended v16 or newer)
+- npm (or yarn)
 
-### `npm start`
+**Install**
+Install dependencies:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+npm install
+```
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+**Available scripts**
+- `npm start` — Runs the Vite dev server (`vite`). Opens the app (configured to use port `3000`).
+- `npm run build` — Builds the production bundle with Vite. Output directory is `build` (see `vite.config.js`).
+- `npm run serve` — Preview the built production bundle using `vite preview`.
+- `npm run deploy` — Deploy script (uses `gh-pages -d build` by default).
 
-### `npm test`
+Example local development:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+npm start
+```
 
-### `npm run build`
+Build for production:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+npm run build
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Preview the production build locally:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+npm run serve
+```
 
-### `npm run eject`
+Deploy (GitHub Pages configured in `package.json`):
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```
+npm run predeploy
+npm run deploy
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Environment variables**
+- `VITE_FORMSPREE_ID` — optional Formspree form ID used by the contact form. If not set, a default fallback ID is used in the code.
+- `BASE_URL` / `import.meta.env.BASE_URL` — Vite exposes the `BASE_URL` configured in `vite.config.js` (set to `/THCquila/` in this repo). The app uses `import.meta.env.BASE_URL` to resolve static asset paths.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Note: some legacy Create React App environment variables like `PUBLIC_URL` or `process.env.NODE_ENV` are referenced in `src/serviceWorker.js`. Vite provides `import.meta.env.*` — keep this in mind if you modify service worker code.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**Vite configuration**
+- See `vite.config.js` for important settings: `base` (public base path), `server.port` (dev port), and `build.outDir` (output folder).
 
-## Learn More
+**Helpful tips**
+- If you need environment variables in Vite, prefix them with `VITE_` and place them in a `.env` file (for example, `.env.local`) at the project root:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+VITE_FORMSPREE_ID=your_formspree_id_here
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Vite serves `import.meta.env` variables at build time — restart the dev server after changing `.env` files.
 
-### Code Splitting
+If you'd like, I can also:
+- add a short `.env.example` file listing recommended variables,
+- update `serviceWorker.js` to use `import.meta.env` instead of `process.env`, or
+- add a GitHub Actions workflow for automatic deploys.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+---

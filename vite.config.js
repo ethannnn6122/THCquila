@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
+  base: '/THCquila/',
   plugins: [react()],
   resolve: {
     alias: {
@@ -27,6 +28,6 @@ export default defineConfig({
     open: true, // Opens browser automatically
   },
   build: {
-    outDir: 'build', // Matches your old output folder name
+    outDir: 'build',
   },
 });
