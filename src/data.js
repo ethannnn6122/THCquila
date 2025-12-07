@@ -27,8 +27,8 @@ export const storeProducts = [
     },
     {
       id: 3,
-      title: "HTC 10 - Black",
-      img: `${BASE}product-3.png`,
+      title: "THCquila Prod",
+      img: `${BASE}product-1.png`,
       price: 8.00,
       company: "TBD",
       info:
@@ -39,8 +39,8 @@ export const storeProducts = [
     },
     {
       id: 4,
-      title: "HTC 10 - White",
-      img: `${BASE}product-4.png`,
+      title: "THCquila Prod",
+      img: `${BASE}product-2.png`,
       price: 18.00,
       company: "TBD",
       info:
@@ -51,8 +51,8 @@ export const storeProducts = [
     },
     {
       id: 5,
-      title: `HTC Desire 626s`,
-      img: "${BASE}product-5.png",
+      title: `THCquila Prod`,
+      img: `${BASE}product-1.png`,
       price: 24.00,
       company: "TBD",
       info:
@@ -63,8 +63,8 @@ export const storeProducts = [
     },
     {
       id: 6,
-      title: "WEED",
-      img: `${BASE}product-6.png`,
+      title: "THCquila Prod",
+      img: `${BASE}product-2.png`,
       price: 20.00,
       company: "TBD",
       info:
@@ -75,8 +75,8 @@ export const storeProducts = [
     },
     {
       id: 7,
-      title: "Iphone 7",
-      img: `${BASE}product-7.png`,
+      title: "THCquila Prod",
+      img: `${BASE}product-1.png`,
       price: 30.00,
       company: "TBD",
       info:
@@ -87,8 +87,8 @@ export const storeProducts = [
     },
     {
       id: 8,
-      title: "Smashed Iphone",
-      img: `${BASE}product-8.png`,
+      title: "THCquila Prod",
+      img: `${BASE}product-2.png`,
       price: 2.00,
       company: "TBD",
       info:
@@ -101,7 +101,7 @@ export const storeProducts = [
   
   export const detailProduct = {
     id: 1,
-    title: "Google Pixel - Black",
+    title: "THCquila Prod",
     img: `${BASE}product-1.png`,
     price: 10.00,
     company: "TBD",

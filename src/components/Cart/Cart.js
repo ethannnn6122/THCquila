@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import {Component} from 'react';
 import Title from '../Products/Title';
 import CartColumns from './CartColumns';
 import EmptyCart from './EmptyCart';

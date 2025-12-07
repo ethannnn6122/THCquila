@@ -5,11 +5,11 @@
 }
 
 .Logo {
-    font-family: 'Rye', serif;
+    font-family: 'Calistoga', serif;
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 0.1rem;
-    color: var(--mainYellow) !important;
+    color: var(--lightBlue) !important;
 }
 
 .NavLink {
@@ -21,20 +21,20 @@
 }
 
 .NavLink:hover {
-    color: var(--mainYellow) !important;
+    color: var(--lightBlue) !important;
 }
 
 .CartButton {
-    border: 2px solid var(--mainYellow);
-    color: var(--mainYellow);
+    border: 2px solid var(--lightBlue);
+    color: var(--lightBlue);
     font-weight: 600;
 }
 
 .CartButton:hover {
-    background: var(--mainYellow);
+    background: var(--lightBlue);
     color: var(--mainBlue);
 }
 
 .Hr {
-    background-color: var(--mainYellow);
+    background-color: var(--lightBlue);
 }

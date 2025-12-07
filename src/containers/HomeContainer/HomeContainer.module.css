@@ -1,15 +1,43 @@
 .heroSection {
-    background: 'linear-gradient(135deg, var(--mainBlue) 0%, #1e293b 100%)';
-    color: 'white';
-    padding: '5rem 1rem';
-    margin-bottom: '3rem';
-    text-align: 'center';
-    border-radius: '0 0 50% 50% / 4%';
+    background: linear-gradient(135deg, var(--mainBlue) 0%, #1e293b 100%);
+    color: var(--mainYellow);
+    padding: 5rem 1rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    border-radius: 0 0 50% 50% / 4%;
 }
 
 .shopBtn {
-    background: var(--mainYellow);
+    background: var(--lightBlue);
     color: var(--mainBlue);
     border: none;
     font-weight: bold;
+}
+
+/* New styles for the image layout */
+.imageWrapper {
+    width: 100%;
+}
+
+.storyImage {
+    width: 100%;
+    height: auto;
+}
+
+/* Only on desktop: Force image to match text height absolutely */
+@media (min-width: 768px) {
+    .imageWrapper {
+        position: relative;
+        height: 100%;
+    }
+    
+    .storyImage {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: contain; 
+        object-position: top center;
+    }
 }

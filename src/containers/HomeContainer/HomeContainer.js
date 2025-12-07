@@ -24,22 +24,27 @@ class HomeContainer extends Component {
                         </Route>
                     </Container>
                 </div>
-                {/* Content Section - Stacked on Mobile, Row on Desktop */}
+                {/* Content Section */}
                 <Container className="mb-5 mt-4">
-                    <Row className="align-items-center">
+                    <Row className="align-items-stretch">
+                        {/* Text Column: Removed 'justify-content-center' to ensure top alignment */}
                         <Col md={6} className="mb-4 mb-md-0">
                             <h2>Our Story</h2>
+                            <br/>
                             <p className="text-muted" style={{ lineHeight: '1.8' }}>
                                 What is THCquila? It started with a simple idea: High spirits and good vibes belong together. We noticed that the tequila lovers and the cannabis connoisseurs were often the same people at the party—so we built a brand just for them. THCquila isn't a drink; it's a statement. It’s apparel infused with the prickly edge of the desert and the chill of the West Coast. Bold graphics, vintage textures, and a unapologetic love for the cross-fade.
                             </p>
                         </Col>
-                        <Col md={6} className="mb-4 mb-md-0">
-                            <img 
-                                src={`${import.meta.env.BASE_URL}THCquilaLogo.png`}
-                                alt="THCquila Story" 
-                                className="img-fluid rounded shadow-lg"
-                                style={{ objectFit: 'cover' }} 
-                            />
+                        
+                        {/* Image Column */}
+                        <Col md={6}>
+                            <div className={classes.imageWrapper}>
+                                <img 
+                                    src={`${import.meta.env.BASE_URL}THCquilaLogo.png`}
+                                    alt="THCquila Story" 
+                                    className={classes.storyImage}
+                                />
+                            </div>
                         </Col>
                     </Row>
                 </Container>

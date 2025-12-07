@@ -24,7 +24,8 @@ const Placeholder = () => {
         setStatus({ ...status, submitting: true, error: null });
         try {
             // Call Python backend
-            const response = await fetch('https://api.milehighcoding.com/api/join', {
+            const API_URL = import.meta.env.VITE_API_URL
+            const response = await fetch(`${API_URL}/api/join`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -7,11 +7,13 @@ const Footer = () => {
                 <div className="row">
                     <div className="col-12 text-center">
                         {/* Brand / Logo Area */}
-                        <h4 className={classes.Brand}>THCquila</h4>
+                        <h3 className={classes.Brand}>THCquila</h3>
                         {/* Copyright Area */}
                         <div className={classes.Text}>
+                            <p className='mb-0'>Infused Apparel for the bold and the buzzed</p>
+                            <br/>
                             <p className="mb-0">
-                                Infused Apparel for the bold and the buzzed {new Date().getFullYear()} &copy; Milehighcoding. All rights reserved.
+                                {new Date().getFullYear()} Milehighcoding &copy; All rights reserved.
                             </p>
                         </div>
                     </div>
