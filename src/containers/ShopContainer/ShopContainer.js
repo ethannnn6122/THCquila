@@ -11,6 +11,7 @@ import Default from '../../components/Default';
 
 class ShopContainer extends Component {
     state = {
+        showPlaceholder: true,
         showSuccessModal: false
     };
 
@@ -20,6 +21,21 @@ class ShopContainer extends Component {
         if (query.get("redirect_status") === "succeeded") {
             this.setState({ showSuccessModal: true });
         }
+        // This attaches a function to the browser window
+        window.toggleShop = () => {
+            this.setState(prevState => ({
+                showPlaceholder: !prevState.showPlaceholder
+            }), () => {
+                console.log(`Shop State: ${this.state.showPlaceholder ? "Placeholder (Hidden)" : "Live Shop (Visible)"}`);
+            });
+        };
+
+        console.log("🙈 Dev Mode: Type 'window.toggleShop()' in console to see the store.");
+    }
+
+    componentWillUnmount() {
+        // Cleanup to prevent memory leaks
+        delete window.toggleShop;
     }
 
     handleClose = () => {
@@ -28,7 +44,7 @@ class ShopContainer extends Component {
 
     render() {
         // TOGGLE: Set to 'false' to show actual Shop
-        const showPlaceholder = false; 
+        const { showPlaceholder, showSuccessModal } = this.state;
 
         return(
             <>
