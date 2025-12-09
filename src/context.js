@@ -44,25 +44,46 @@ class ProductProvider extends Component {
         })
     };
 
-    addToCart = (id) => {
-       let tempProducts = [...this.state.products];
-       const index = tempProducts.indexOf(this.getItem(id));
-       const product = tempProducts[index];
-       product.inCart = true;
-       product.count = 1;
-       const price = product.price;
-       product.total = price;
-       this.setState(() => {
-           return {products: tempProducts, cart:[...this.state.cart, product]};
-       }, () => {
-           this.addTotals();
-       })
+    addToCart = (id, size, color) => {
+        // 1. Generate a unique ID for this specific variant
+        const cartId = `${id}-${size}-${color}`;
+        
+        let tempCart = [...this.state.cart];
+        
+        // 2. Check if this exact variant is already in the cart
+        const existingItem = tempCart.find(item => item.cartId === cartId);
+
+        if (existingItem) {
+            // If exists, just update count
+            existingItem.count += 1;
+            existingItem.total = existingItem.count * existingItem.price;
+        } else {
+            // 3. If new, create a CLONE of the product details
+            const product = this.getItem(id);
+            const newCartItem = {
+                ...product,
+                cartId: cartId, // The new unique identifier
+                selectedSize: size,
+                selectedColor: color,
+                count: 1,
+                total: product.price,
+                inCart: true
+            };
+            tempCart.push(newCartItem);
+        }
+
+        this.setState(() => {
+            return { cart: tempCart };
+        }, () => {
+            this.addTotals();
+        });
     };
 
-    openModal = id => {
+    openModal = (id, color) => {
         const product = this.getItem(id);
+        const modalProduct = {...product, selectedColor: color};
         this.setState(() => {
-            return {modalProduct: product, modalOpen: true};
+            return {modalProduct: modalProduct, modalOpen: true};
         });
     }
 
@@ -72,67 +93,53 @@ class ProductProvider extends Component {
         })
     }
 
-    increment = id => {
+    increment = (cartId) => {
         let tempCart = [...this.state.cart];
-        const selProduct = tempCart.find(i =>  i.id === id);
-        const index = tempCart.indexOf(selProduct);
-        const product = tempCart[index];
+        const selectedProduct = tempCart.find(item => item.cartId === cartId);
+        
+        // Safety check
+        if (!selectedProduct) return;
 
-        product.count = product.count + 1;
-        product.total = product.count * product.price;
+        selectedProduct.count = selectedProduct.count + 1;
+        selectedProduct.total = selectedProduct.count * selectedProduct.price;
 
         this.setState(() => {
-            return{
-                cart: [...tempCart]
-            }
+            return { cart: [...tempCart] }
         }, () => {
             this.addTotals();
         });
     }
 
-    decrement = id => {
+    decrement = (cartId) => {
         let tempCart = [...this.state.cart];
-        const selProduct = tempCart.find(i =>  i.id === id);
-        const index = tempCart.indexOf(selProduct);
-        const product = tempCart[index];
+        const selectedProduct = tempCart.find(item => item.cartId === cartId);
 
-        product.count = product.count - 1;
-        if (product.count === 0) {
-            this.removeItem(id);
+        if (!selectedProduct) return;
+
+        selectedProduct.count = selectedProduct.count - 1;
+        if (selectedProduct.count === 0) {
+            this.removeItem(cartId);
         } else {
-            product.total = product.count * product.price;
+            selectedProduct.total = selectedProduct.count * selectedProduct.price;
             this.setState(() => {
-                return{
-                    cart: [...tempCart]
-                }
+                return { cart: [...tempCart] }
             }, () => {
                 this.addTotals();
             });
         }
     }
 
-    removeItem = id => {
-        let tempProducts = [...this.state.products];
+    removeItem = (cartId) => {
         let tempCart = [...this.state.cart];
-
-        tempCart = tempCart.filter(i => i.id !== id);
-        const index = tempProducts.indexOf(this.getItem(id));
-        let removed = tempProducts[index] 
-
-        removed.inCart = false;
-        removed.count = 0;
-        removed.total = 0;
+        tempCart = tempCart.filter(item => item.cartId !== cartId);
 
         this.setState(() => {
             return {
                 cart: [...tempCart],
-                products: [...tempProducts],
-
             }
         }, () => {
             this.addTotals();
         })
-
     }
 
     clearCart = () => {
@@ -183,4 +190,4 @@ class ProductProvider extends Component {
 
 const ProductConsumer = ProductContext.Consumer;
 
-export { ProductProvider, ProductConsumer };
+export { ProductProvider, ProductConsumer, ProductContext };

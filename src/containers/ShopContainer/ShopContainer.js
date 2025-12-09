@@ -19,9 +19,6 @@ class ShopContainer extends Component {
         const query = new URLSearchParams(window.location.search);
         if (query.get("redirect_status") === "succeeded") {
             this.setState({ showSuccessModal: true });
-            
-            // Optional: Clean the URL so the popup doesn't show again on refresh
-            // window.history.replaceState({}, document.title, window.location.pathname);
         }
     }
 

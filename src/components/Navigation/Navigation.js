@@ -30,7 +30,7 @@ const Navigation = () => {
             <Navbar className={classes.NavWrapper} variant="dark" expand="lg" sticky="top">
                 <LinkContainer to='/'>
                     <Navbar.Brand className={classes.Logo}>
-                        <i className="fas fa-cocktail mr-2"></i> THCquila
+                        <i className="fas fa-cannabis"></i> THCquila
                     </Navbar.Brand>
                 </LinkContainer>
                 

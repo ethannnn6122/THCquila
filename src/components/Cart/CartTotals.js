@@ -67,12 +67,21 @@ const CartTotals = (props) => {
                                     className="btn text-uppercase px-4 py-2 mb-3"
                                     type="button"
                                     onClick={() => clearCart()}
-                                    disabled={showCheckout} // Disable clear during checkout
+                                    disabled={showCheckout}
                                 >
                                     Clear Cart
                                 </Button>
                             </Link>
-
+                            <br/>
+                            <Link to="/shop">
+                                <Button 
+                                    className="btn text-uppercase px-4 py-2 mb-3"
+                                    type="button"
+                                    disabled={showCheckout} 
+                                >
+                                    Continue Shopping
+                                </Button>
+                            </Link>
                             <div className="d-flex justify-content-between px-md-5 my-2">
                                 <span className="text-title font-weight-bold">Subtotal:</span>
                                 <strong>$ {formatPrice(cartSubTotal)}</strong>

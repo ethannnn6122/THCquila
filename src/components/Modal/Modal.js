@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import {Component} from "react";
 import classes from './Modal.module.css';
 import {ProductConsumer} from '../../context';
 import {Button, Container, Row, Col} from 'react-bootstrap';
@@ -10,7 +10,10 @@ class Modal extends Component {
             <ProductConsumer>
                 { val => {
                     const {modalOpen, closeModal} = val;
-                    const {img, title, price} = val.modalProduct;
+                    const {img, title, price, selectedColor, imageMap} = val.modalProduct;
+                    const displayImage = (imageMap && selectedColor && imageMap[selectedColor]) 
+                        ? imageMap[selectedColor][0] 
+                        : img;
                     if (!modalOpen) {
                         return null
                     } else {
@@ -20,11 +23,22 @@ class Modal extends Component {
                                     <Row className={classes.Modal}>
                                         <Col className="col-8 mx-auto col-md-6 col-lg-4 text-center text-capitalize p-5">
                                             <h5>Item added to the cart</h5>
-                                            <img src={img} className="img-fluid" alt="product"/>
+                                            
+                                            {/* Use displayImage instead of img */}
+                                            <img 
+                                                src={displayImage} 
+                                                className="img-fluid" 
+                                                alt="product"
+                                                style={{ maxHeight: '300px', objectFit: 'contain' }}
+                                            />
+                                            
                                             <h5 className="mt-2">{title}</h5>
+                                            
+                                            {selectedColor && <h6 className="text-muted">Color: {selectedColor}</h6>}
+                                            
                                             <h5 className="text-muted">price : $ {price}</h5>
                                             <Link to="/shop">
-                                                <Button className="btn" onClick={() => closeModal()}>
+                                                <Button className="btn" style={{marginBottom: '1rem'}} onClick={() => closeModal()}>
                                                     Continue Shopping
                                                 </Button>
                                             </Link>

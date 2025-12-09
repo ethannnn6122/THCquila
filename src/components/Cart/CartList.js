@@ -6,7 +6,7 @@ const CartList = (props) => {
     return (
         <Container fluid>
             {props.value.cart.map(i => {
-                return <CartItem key={i.id} item={i} value={props.value} inc={props.inc}/>
+                return <CartItem key={i.cartId} item={i} value={props.value} inc={props.inc}/>
             })}
             
         </Container>
