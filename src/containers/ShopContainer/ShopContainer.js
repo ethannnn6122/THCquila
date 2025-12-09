@@ -28,7 +28,7 @@ class ShopContainer extends Component {
 
     render() {
         // TOGGLE: Set to 'false' to show actual Shop
-        const showPlaceholder = true; 
+        const showPlaceholder = false; 
 
         return(
             <>

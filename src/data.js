@@ -12,9 +12,10 @@ const PRODPATHS = {
 }
 
 // Define standard views for this product (order matters for the gallery)
-const shirtViews = ["collage", "front", "back", "right", "left"];
+const shirtViews = ["collage", "front", "left", "back", "right"];
 const glassViews = ["empty", "full", "hand", "quarter"];
 const hatViews = ["front", "leftfront", "rightfront", "back"];
+const hoodieViews = shirtViews.slice(1)
 
 // --- HELPER FUNCTION ---
 // Automatically builds an array of image URLs based on naming scheme
@@ -32,7 +33,7 @@ export const storeProducts = [
       title: "THCquila Signature Tee",
       // Default image (Main view of the first color)
       img: `${BASE}${PRODPATHS.Prod1}product-tshirt-black-collage.png`,
-      price: 45.99,
+      price: 39.99,
       company: "THCquila",
       info: "The staple of the collection. This premium tee features our signature agave-infused branding. Made from 100% combed ring-spun cotton for a soft, vintage feel that fits perfectly from day one.",
       inCart: false,
@@ -51,9 +52,9 @@ export const storeProducts = [
     },
     {
       id: 2,
-      title: "THCquila TBD Tee",
-      img: `${BASE}${PRODPATHS.Prod1}product-tshirt-navy-collage.png`,
-      price: 15.99,
+      title: "THCquila Logo Tee",
+      img: `${BASE}${PRODPATHS.Prod2}product-tshirt-black-collage.png`,
+      price: 39.99,
       company: "THCquila",
       info: "The staple of the collection. This premium tee features our signature agave-infused branding. Made from 100% combed ring-spun cotton for a soft, vintage feel that fits perfectly from day one.",
       inCart: false,
@@ -64,17 +65,17 @@ export const storeProducts = [
       colors: ["Black", "Green", "Grey", "Navy"],
       // DYNAMIC IMAGE MAPPING
       imageMap: {
-          "Black": generateImages(PRODPATHS.Prod1, "tshirt", "Black", shirtViews),
-          "Green": generateImages(PRODPATHS.Prod1, "tshirt", "Green", shirtViews),
-          "Grey": generateImages(PRODPATHS.Prod1, "tshirt", "Grey", shirtViews),
-          "Navy": generateImages(PRODPATHS.Prod1, "tshirt", "Navy", shirtViews)
+          "Black": generateImages(PRODPATHS.Prod2, "tshirt", "Black", shirtViews),
+          "Green": generateImages(PRODPATHS.Prod2, "tshirt", "Green", shirtViews),
+          "Grey": generateImages(PRODPATHS.Prod2, "tshirt", "Grey", shirtViews),
+          "Navy": generateImages(PRODPATHS.Prod2, "tshirt", "Navy", shirtViews)
       }
     },
     {
       id: 3,
-      title: "THCquila Logo Tee",
-      img: `${BASE}${PRODPATHS.Prod1}product-tshirt-navy-collage.png`,
-      price: 15.99,
+      title: "THCquila TBD Tee",
+      img: `${BASE}${PRODPATHS.Prod1}product-tshirt-green-collage.png`,
+      price: 39.99,
       company: "THCquila",
       info: "The staple of the collection. This premium tee features our signature agave-infused branding. Made from 100% combed ring-spun cotton for a soft, vintage feel that fits perfectly from day one.",
       inCart: false,
@@ -94,8 +95,8 @@ export const storeProducts = [
     {
       id: 4,
       title: "THCquila TBD Tee",
-      img: `${BASE}${PRODPATHS.Prod1}product-tshirt-navy-collage.png`,
-      price: 15.99,
+      img: `${BASE}${PRODPATHS.Prod1}product-tshirt-grey-collage.png`,
+      price: 39.99,
       company: "THCquila",
       info: "The staple of the collection. This premium tee features our signature agave-infused branding. Made from 100% combed ring-spun cotton for a soft, vintage feel that fits perfectly from day one.",
       inCart: false,
@@ -116,7 +117,7 @@ export const storeProducts = [
       id: 5,
       title: "THCquila TBD Tee",
       img: `${BASE}${PRODPATHS.Prod1}product-tshirt-navy-collage.png`,
-      price: 15.99,
+      price: 39.99,
       company: "THCquila",
       info: "The staple of the collection. This premium tee features our signature agave-infused branding. Made from 100% combed ring-spun cotton for a soft, vintage feel that fits perfectly from day one.",
       inCart: false,
@@ -152,29 +153,29 @@ export const storeProducts = [
     {
       id: 7,
       title: "THCquila Hoodie",
-      img: `${BASE}${PRODPATHS.Prod1}product-tshirt-green-collage.png`,
-      price: 15.99,
+      img: `${BASE}${PRODPATHS.Prod7}product-hoodie-black-front.png`,
+      price: 49.99,
       company: "THCquila",
       info: "The staple of the collection. This premium tee features our signature agave-infused branding. Made from 100% combed ring-spun cotton for a soft, vintage feel that fits perfectly from day one.",
       inCart: false,
       count: 0,
       total: 0,
       // AVAILABLE OPTIONS
-      sizes: ["S", "M", "L", "XL", "XXL"],
-      colors: ["Black", "Green", "Grey", "Navy"],
+      sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
+      colors: ["Black", "Navy", "Grey", "White"],
       // DYNAMIC IMAGE MAPPING
       imageMap: {
-          "Black": generateImages(PRODPATHS.Prod1, "tshirt", "Black", shirtViews),
-          "Green": generateImages(PRODPATHS.Prod1, "tshirt", "Green", shirtViews),
-          "Grey": generateImages(PRODPATHS.Prod1, "tshirt", "Grey", shirtViews),
-          "Navy": generateImages(PRODPATHS.Prod1, "tshirt", "Navy", shirtViews)
+          "Black": generateImages(PRODPATHS.Prod7, "hoodie", "Black", hoodieViews),
+          "Navy": generateImages(PRODPATHS.Prod7, "hoodie", "Navy", hoodieViews),
+          "Grey": generateImages(PRODPATHS.Prod7, "hoodie", "Grey", hoodieViews),
+          "White": generateImages(PRODPATHS.Prod7, "hoodie", "White", hoodieViews)
       }
     },
     {
       id: 8,
       title: "THCquila Hat",
       img: `${BASE}${PRODPATHS.Prod8}product-hat-white-front.png`,
-      price: 15.99,
+      price: 25.99,
       company: "THCquila",
       info: "The staple of the collection. This premium tee features our signature agave-infused branding. Made from 100% combed ring-spun cotton for a soft, vintage feel that fits perfectly from day one.",
       inCart: false,
