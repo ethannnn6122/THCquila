@@ -13,7 +13,7 @@ const Footer = () => {
                             <p className='mb-0'>Infused Apparel for the bold and the buzzed</p>
                             <br/>
                             <p className="mb-0">
-                                {new Date().getFullYear()} Milehighcoding &copy; All rights reserved.
+                                &copy; {new Date().getFullYear()} <strong>Infused Culture, LLC</strong>. All rights reserved.
                             </p>
                         </div>
                     </div>

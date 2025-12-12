@@ -1,29 +1,47 @@
-import React, { useEffect } from 'react';
-import { useForm } from '@formspree/react';
+import React, { useState } from 'react';
 import classes from './ContactForm.module.css';
 
 export function ContactForm() {
   const [formData, setFormData] = React.useState({ name: '', email: '', subject: '', message: '', subscribe: false });
-  const formspreeId = import.meta.env.VITE_FORMSPREE_ID || 'mnnevjbz';
-  const [state, handleFormSubmit] = useForm(formspreeId);
+
+  const [status, setStatus] = useState({
+      submitting: false,
+      succeeded: false,
+      error: null
+  });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
-    // Controlled inputs are still used; the Formspree hook will read from the form element.
-    handleFormSubmit(e);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus({ submitting: true, succeeded: false, error: null });
+    const API_URL = import.meta.env.VITE_API_URL;
+    try{
+      const response = await fetch(`${API_URL}/api/contact`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        setStatus({submitting: false, succeeded: true, error: null});
+        setFormData({name: '', email: '', subject: '', message: ''});
+      } else {
+        const data = await response.json();
+        setStatus({ name: '', email: '', subject: '', message: '' });
+      }
+    } catch(error) {
+      console.error("Contact error:", error);
+      setStatus({ submitting: false, succeeded: false, error: "Network Error, Try again!"})
+    }
   };
 
-  useEffect(() => {
-    if (state.succeeded) {
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }
-  }, [state.succeeded]);
-
-  return (
+ return (
     <form className={classes.ContactForm} onSubmit={handleSubmit}>
       <h1>Contact Us</h1>
       <p>
@@ -49,19 +67,16 @@ export function ContactForm() {
         <label htmlFor="message">Message</label>
         <textarea id="message" name="message" rows={5} value={formData.message} onChange={handleInputChange} required></textarea>
       </div>
-      {/* Hidden field to help identify submissions as contact form */}
-      <input type="hidden" name="formType" value="contact" />
 
-      <button type="submit" className={classes.SubmitBtn} disabled={state.submitting}>
-        {state.submitting ? 'Sending...' : 'Send Message'}
+      <button type="submit" className={classes.SubmitBtn} disabled={status.submitting}>
+        {status.submitting ? 'Sending...' : 'Send Message'}
       </button>
 
-      {state.succeeded && <p className={classes.SuccessMsg}>Thank you for your message! I'll get back to you soon.</p>}
-      {state.errors && state.errors.length > 0 && (
+      {status.succeeded && <p className={classes.SuccessMsg}>Thank you for your message! We will be in touch soon.</p>}
+      
+      {status.error && (
         <div className={classes.ErrorMsg} role="alert">
-          {state.errors.map((err, idx) => (
-            <p key={idx}>{err.message}</p>
-          ))}
+            <p>{status.error}</p>
         </div>
       )}
     </form>

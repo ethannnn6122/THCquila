@@ -32,7 +32,7 @@ class HomeContainer extends Component {
                             <h2>Our Story</h2>
                             <br/>
                             <p className="text-muted" style={{ lineHeight: '1.8' }}>
-                                What is THCquila? It started with a simple idea: High spirits and good vibes belong together. We noticed that the tequila lovers and the cannabis connoisseurs were often the same people at the party—so we built a brand just for them. THCquila isn't a drink; it's a statement. It’s apparel infused with the prickly edge of the desert and the chill of the West Coast. Bold graphics, vintage textures, and a unapologetic love for the cross-fade.
+                                <strong>Infused Culture</strong> presents <em>THCquila</em>. It started with a simple idea: High spirits and good vibes belong together. We noticed that the tequila lovers and the cannabis connoisseurs were often the same people at the party—so we built a brand just for them. THCquila isn't a drink; it's a statement. It’s apparel infused with the prickly edge of the desert and the chill of the West Coast. Bold graphics, vintage textures, and a unapologetic love for the cross-fade.
                             </p>
                         </Col>
                         

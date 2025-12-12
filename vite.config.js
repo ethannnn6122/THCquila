@@ -24,8 +24,8 @@ export default defineConfig({
     },
   },
   server: {
-    port: 3000, // Keeps your old port
-    open: true, // Opens browser automatically
+    port: 3001, 
+    open: false,
   },
   build: {
     outDir: 'build',
