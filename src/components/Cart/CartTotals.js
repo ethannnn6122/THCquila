@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Container, Row, Col, Button, Spinner, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { loadStripe } from "@stripe/stripe-js";
@@ -57,7 +57,6 @@ const CartTotals = (props) => {
     return (
         <Container className="py-5">
             <Row>
-                {/* Changed to 'mx-auto' for centering and 'col-md-8' for wider display */}
                 <Col className="col-10 mx-auto col-md-8 text-center text-capitalize">
                     
                     <Card className="p-4 shadow-sm border-0 bg-white">
@@ -67,7 +66,7 @@ const CartTotals = (props) => {
                                     className="btn text-uppercase px-4 py-2 mb-3"
                                     type="button"
                                     onClick={() => clearCart()}
-                                    disabled={showCheckout}
+                                    // FIXED: Removed 'disabled={showCheckout}'
                                 >
                                     Clear Cart
                                 </Button>
@@ -77,7 +76,7 @@ const CartTotals = (props) => {
                                 <Button 
                                     className="btn text-uppercase px-4 py-2 mb-3"
                                     type="button"
-                                    disabled={showCheckout} 
+                                    // FIXED: Removed 'disabled={showCheckout}'
                                 >
                                     Continue Shopping
                                 </Button>
@@ -124,6 +123,16 @@ const CartTotals = (props) => {
                             ) : (
                                 clientSecret && (
                                     <div className="text-left mt-3">
+                                        {/* ADDED: Cancel Button to close the form */}
+                                        <Button 
+                                            variant="link" 
+                                            className="text-muted mb-2 p-0"
+                                            onClick={() => setShowCheckout(false)}
+                                            style={{ textDecoration: 'none', border: 'none' }}
+                                        >
+                                            <i className="fas fa-arrow-left"></i> Cancel Checkout
+                                        </Button>
+
                                         <h5 className="mb-4 text-center text-muted">
                                             <i className="fas fa-lock mr-2"></i> Enter Payment Details
                                         </h5>

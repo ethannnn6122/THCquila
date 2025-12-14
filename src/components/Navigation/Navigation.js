@@ -26,14 +26,12 @@ const Navigation = () => {
 
     return (
         <>
-            {/* 'expand="lg"' is the key to making the hamburger menu appear on mobile */}
             <Navbar className={classes.NavWrapper} variant="dark" expand="lg" sticky="top">
                 <LinkContainer to='/'>
                     <Navbar.Brand className={classes.Logo}>
-                        <i className="fas fa-cannabis"></i> THCquila
+                        <img className={classes.NavImg} src={`${import.meta.env.BASE_URL}logo192.png`}/> Infused Culture
                     </Navbar.Brand>
                 </LinkContainer>
-                
                 {/* Mobile Toggle Button */}
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 

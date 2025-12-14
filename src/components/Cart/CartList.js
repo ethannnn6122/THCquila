@@ -1,4 +1,3 @@
-import React from 'react';
 import CartItem from './CartItem';
 import { Container } from 'react-bootstrap';
 

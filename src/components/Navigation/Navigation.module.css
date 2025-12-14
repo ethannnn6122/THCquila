@@ -12,6 +12,14 @@
     color: var(--lightBlue) !important;
 }
 
+.NavImg {
+    height: 70px;
+    width: auto;
+    object-fit: contain; 
+    max-width: 150px;
+    margin-right: 10px;
+}
+
 .NavLink {
     color: #e2e8f0 !important; /* Softer white */
     font-size: 1.1rem;
@@ -37,4 +45,10 @@
 
 .Hr {
     background-color: var(--lightBlue);
+}
+
+@media (max-width: 768px) {
+    .NavImg {
+        height: 40px;
+    }
 }

@@ -52,23 +52,23 @@ export const storeProducts = [
     },
     {
       id: 2,
-      title: "THCquila Logo Tee",
-      img: `${BASE}${PRODPATHS.Prod2}product-tshirt-black-collage.png`,
-      price: 39.99,
+      title: "THCquila Hoodie",
+      img: `${BASE}${PRODPATHS.Prod7}product-hoodie-black-front.png`,
+      price: 49.99,
       company: "THCquila",
       info: "The staple of the collection. This premium tee features our signature agave-infused branding. Made from 100% combed ring-spun cotton for a soft, vintage feel that fits perfectly from day one.",
       inCart: false,
       count: 0,
       total: 0,
       // AVAILABLE OPTIONS
-      sizes: ["S", "M", "L", "XL", "XXL"],
-      colors: ["Black", "Green", "Grey", "Navy"],
+      sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
+      colors: ["Black", "Navy", "Grey", "White"],
       // DYNAMIC IMAGE MAPPING
       imageMap: {
-          "Black": generateImages(PRODPATHS.Prod2, "tshirt", "Black", shirtViews),
-          "Green": generateImages(PRODPATHS.Prod2, "tshirt", "Green", shirtViews),
-          "Grey": generateImages(PRODPATHS.Prod2, "tshirt", "Grey", shirtViews),
-          "Navy": generateImages(PRODPATHS.Prod2, "tshirt", "Navy", shirtViews)
+          "Black": generateImages(PRODPATHS.Prod7, "hoodie", "Black", hoodieViews),
+          "Navy": generateImages(PRODPATHS.Prod7, "hoodie", "Navy", hoodieViews),
+          "Grey": generateImages(PRODPATHS.Prod7, "hoodie", "Grey", hoodieViews),
+          "White": generateImages(PRODPATHS.Prod7, "hoodie", "White", hoodieViews)
       }
     },
     {
@@ -152,23 +152,23 @@ export const storeProducts = [
     },
     {
       id: 7,
-      title: "THCquila Hoodie",
-      img: `${BASE}${PRODPATHS.Prod7}product-hoodie-black-front.png`,
-      price: 49.99,
+      title: "THCquila Logo Tee",
+      img: `${BASE}${PRODPATHS.Prod2}product-tshirt-black-collage.png`,
+      price: 39.99,
       company: "THCquila",
       info: "The staple of the collection. This premium tee features our signature agave-infused branding. Made from 100% combed ring-spun cotton for a soft, vintage feel that fits perfectly from day one.",
       inCart: false,
       count: 0,
       total: 0,
       // AVAILABLE OPTIONS
-      sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
-      colors: ["Black", "Navy", "Grey", "White"],
+      sizes: ["S", "M", "L", "XL", "XXL"],
+      colors: ["Black", "Green", "Grey", "Navy"],
       // DYNAMIC IMAGE MAPPING
       imageMap: {
-          "Black": generateImages(PRODPATHS.Prod7, "hoodie", "Black", hoodieViews),
-          "Navy": generateImages(PRODPATHS.Prod7, "hoodie", "Navy", hoodieViews),
-          "Grey": generateImages(PRODPATHS.Prod7, "hoodie", "Grey", hoodieViews),
-          "White": generateImages(PRODPATHS.Prod7, "hoodie", "White", hoodieViews)
+          "Black": generateImages(PRODPATHS.Prod2, "tshirt", "Black", shirtViews),
+          "Green": generateImages(PRODPATHS.Prod2, "tshirt", "Green", shirtViews),
+          "Grey": generateImages(PRODPATHS.Prod2, "tshirt", "Grey", shirtViews),
+          "Navy": generateImages(PRODPATHS.Prod2, "tshirt", "Navy", shirtViews)
       }
     },
     {

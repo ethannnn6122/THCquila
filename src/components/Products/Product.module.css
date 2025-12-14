@@ -59,3 +59,51 @@
 .imgContainer:hover .CartBtn {
     transform: translate(0, 0); /* Slide in on hover */
 }
+
+.ComingSoonWrapper {
+    position: relative;
+    /* Optional: shows a 'stop' cursor to indicate it's not clickable */
+    cursor: not-allowed; 
+}
+
+/* This applies the blur to the image and button container */
+.ContentBlur {
+    filter: blur(4px) grayscale(80%);
+    pointer-events: none; /* Prevents clicking the Add to Cart button */
+    opacity: 0.6;
+    transition: all 0.3s linear;
+}
+
+/* The overlay container that holds the badge */
+.Overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Reveal overlay on hover */
+.ComingSoonWrapper:hover .Overlay {
+    opacity: 1;
+}
+
+/* The text badge */
+.Badge {
+    background: var(--mainYellow);
+    color: var(--mainBlue);
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 50px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transform: rotate(-10deg); /* Jaunty angle */
+    white-space: nowrap;
+}

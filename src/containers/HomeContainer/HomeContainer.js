@@ -12,6 +12,7 @@ class HomeContainer extends Component {
                 <div className={classes.heroSection}>
                     <Container>
                         <h1 className="display-4 font-weight-bold mb-3 mt-5">Welcome to THCquila</h1>
+                        <p className='text-muted'>By Infused Culture</p>
                         <p className="lead mb-4" style={{ opacity: 0.9 }}>
                             Premium merchandise for the modern lifestyle.
                         </p>
