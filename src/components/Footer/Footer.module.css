@@ -1,9 +1,9 @@
 .FooterWrapper {
     background-color: var(--mainBlue);
     color: var(--mainWhite);
-    padding: 2rem 0 1rem;
-    margin-top: auto; /* Pushes footer to bottom naturally */
-    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Very subtle separator */
+    padding: 1rem 0;
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .Brand {
@@ -11,13 +11,139 @@
     color: var(--lightBlue);
     font-weight: 700;
     letter-spacing: 0.1rem;
-    margin-bottom: .5rem;
+    margin-bottom: 0;
     text-transform: uppercase;
+    font-size: 1.4rem;
 }
 
-.Text {
-    font-size: 0.85rem;
+.SubBrand {
+    color: var(--mainWhite);
+    opacity: 0.7;
+    font-size: 0.8rem;
+    letter-spacing: 0.05rem;
+    margin-bottom: 0.5rem;
+}
+
+.LinkList {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.FooterLink {
+    color: var(--mainWhite);
+    opacity: 0.8;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.05rem;
+}
+
+.FooterLink:hover {
+    color: var(--lightBlue);
+    opacity: 1;
+    text-decoration: none;
+}
+
+.Copyright {
+    font-size: 0.7rem;
+    opacity: 0.4;
+    margin-top: 0.8rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 0.8rem;
+}
+
+/* --- CUSTOM MODAL STYLES --- */
+
+.ModalContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Darker overlay for focus */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.Modal {
+    background: var(--mainWhite);
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.4);
+    min-width: 60vw;
+    
+    /* IMPORTANT: Needed for the absolute position of the X */
+    position: relative; 
+}
+
+/* --- NEW CLOSE ICON STYLE --- */
+.CloseIcon {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    font-size: 1.5rem;
+    color: var(--mainDark);
     opacity: 0.5;
-    margin-top: .5rem;
-    padding-top: .5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.CloseIcon:hover {
+    color: var(--mainRed, red); /* Falls back to red if var missing */
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Specific style for the legal text inside */
+.LegalText {
+    text-align: left;
+    color: var(--mainDark);
+    line-height: 1.8; /* Better readability */
+    font-size: 1rem;
+}
+
+.LegalText h5 {
+    color: var(--mainBlue);
+    margin-top: 2rem;
+    font-weight: 700;
+    border-bottom: 2px solid var(--mainYellow); /* Brand accent */
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+/* --- CUSTOM SCROLLBAR (Brand Themed) --- */
+
+/* Width */
+.Modal::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+.Modal::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+}
+
+/* Handle */
+.Modal::-webkit-scrollbar-thumb {
+    background: var(--mainBlue); /* Blue handle */
+    border-radius: 10px;
+    border: 2px solid #f1f1f1; /* Creates padding effect */
+}
+
+/* Handle on hover */
+.Modal::-webkit-scrollbar-thumb:hover {
+    background: var(--lightBlue); 
 }
