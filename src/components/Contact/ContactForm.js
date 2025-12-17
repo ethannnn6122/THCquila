@@ -58,11 +58,16 @@ export function ContactForm() {
           <input type="email" id="email" name="email" value={formData.email} onChange={handleInputChange} required />
         </div>
       </div>
-      <div className={classes.FormGroup}>
-        <label htmlFor="subject">Subject</label>
-        <input type="text" id="subject" name="subject" value={formData.subject} onChange={handleInputChange} />
+      <div className={classes.FormRow}>
+        <div className={classes.FormGroup}>
+          <label htmlFor="subject">Subject</label>
+          <input type="text" id="subject" name="subject" value={formData.subject} onChange={handleInputChange} />
+        </div>
+        <div className={classes.FormGroup}> 
+          <label htmlFor='phone-number'>Phone Number</label>
+          <input type="text" id="phone-number" name="phone-number" value={formData['phone-number']} onChange={handleInputChange} />
+        </div>
       </div>
-
       <div className={classes.FormGroup}>
         <label htmlFor="message">Message</label>
         <textarea id="message" name="message" rows={5} value={formData.message} onChange={handleInputChange} required></textarea>
